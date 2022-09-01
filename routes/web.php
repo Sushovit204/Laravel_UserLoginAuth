@@ -3,14 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 
-
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::controller(AuthController::class)->group(function (){
-    Route::get('login','index')->name('login');
+    Route::get ('/','index')->name('welcome');
+    Route::get('login','login')->name('login');
     Route::get('registration', 'registration')->name('registration');
     Route::get('logout','logout')->name('logout');
     Route::get('dashboard','dashboard')->name('dashboard');

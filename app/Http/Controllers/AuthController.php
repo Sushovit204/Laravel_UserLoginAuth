@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Auth;
 class AuthController extends Controller
 {
     function index(){
+        return view('welcome');
+    }
+
+    function login(){
         return view('login');
     }
 
@@ -31,9 +35,7 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-
-       
-
+        
         return redirect('login')->with('success','Registartion successful, now you can login!');
     }
 
