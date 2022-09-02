@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>`
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +10,6 @@
 </head>
 <body>
     <div class="container" href="#">Welcome To User Authenticator via Laravel</div> 
-    <li class="nav-item">
-         <a class="nav-link" href="{{ route('login') }}">Continue...</a>
-    </li>
+        <a class="nav-link" href="{{ route('login') }}">Continue...</a>
 </body>
 </html>

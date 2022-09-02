@@ -9,13 +9,13 @@
                     <form action="{{ route('auth.validate_registration') }}" method="POST">
                         @csrf
                         <div class="form-group mb-3">
-                            <input type="text" name="name" class="form-control" placeholder="Name"/>
+                            <input type="text" name="name" class="form-control" autocomplete="off" placeholder="Name"/>
                             @if($errors->has('name'))
                                 <span class="text-danger">{{ $errors->first('name') }}</span>
                             @endif
                         </div>
                         <div class="form-group mb-3">
-                            <input type="text" name="email" class="form-control" placeholder="Email"/>
+                            <input type="text" name="email" class="form-control" autocomplete="off"  placeholder="Email"/>
                             @if($errors->has('email'))
                                 <span class="text-danger">{{ $errors->first('email') }}</span>
                             @endif
