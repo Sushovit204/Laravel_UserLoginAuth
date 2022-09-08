@@ -21,6 +21,10 @@ class AuthController extends Controller
         return view('registration');
     }
 
+    function profile(){
+        return view('profile');
+    }
+
     function validate_registration(Request $request){
         $request->validate([
                 'name' => 'required',
@@ -61,6 +65,22 @@ class AuthController extends Controller
         return redirect('login')->with('success','You arenot allowed to access');
     }
 
+    function edit($id)
+    {
+        $data = User::find($id);
+        return view('profile', ['User'=>$data]);
+    }
+
+
+    function update(Request $request, $id)
+    {
+        $data = User::find($id);
+        $data->name = $request->name;
+        $data->password = $request->password;  
+        $data->save();
+        return redirect(route('dashboard'))->with('status', 'Profile Updated!');
+    }
+
     function logout(){
 
         Auth::logout();
@@ -68,6 +88,8 @@ class AuthController extends Controller
         return Redirect('login')->with('success','Logout Successfully');
 
     }
+
+
 
 }
 
